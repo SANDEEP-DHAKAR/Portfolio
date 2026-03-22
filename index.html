@@ -4,312 +4,423 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sandeep Dhakar Portfolio</title>
+  <title>Sandeep Dhakar // MERN // SYS.PORTFOLIO</title>
   <link rel="icon" type="image/jpg" href="images/sandeep pic.jpg">
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Font Awesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <div class="container">
+<body class="is-loading">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <canvas id="trail-canvas" class="trail-canvas" aria-hidden="true"></canvas>
+  <div class="grid-overlay" aria-hidden="true"></div>
 
-    <!-- Header -->
-    <header>
-      <div class="header-content">
-        <h1>Sandeep Dhakar</h1>
-        <p>Front-End Developer | Building Interactive Web Experiences with JavaScript</p>
-        <a href="#projects" class="btn">View My Work</a>
-      </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-container">
-        <div class="about-img">
-          <img src="images/sandeep pic.jpg" alt="Sandeep Dhakar">
+  <header class="site-header">
+    <nav class="nav glass-nav" aria-label="Primary">
+      <a href="#hero" class="nav-brand"><span class="brand-prompt">root@</span>sandeep<span class="brand-ext">.dev</span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-menu" class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+      <div class="hero-scanlines" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-badge glass-panel">
+          <span class="status-dot"></span>
+          <span>SYSTEM ONLINE</span>
+          <span class="mono-dim">v2.0</span>
         </div>
-        <div class="about-text">
-          <p>
-            Hi! I'm <strong>Sandeep Dhakar</strong>, a passionate Front-End Developer dedicated to creating dynamic and
-            interactive web experiences. I love learning modern web technologies, and I'm currently diving deep into
-            <strong>JavaScript</strong> and <strong>React</strong> to build responsive and user-friendly websites.
-          </p>
-          <p>
-            I completed my <strong>Computer Science</strong> studies at <em>Inderprasth College</em> and <em>Jiwaji
-              University, Gwalior</em>. I enjoy tackling challenges, experimenting with new ideas, and continuously
-            improving my coding skills.
-          </p>
-          <p>
-            When I'm not coding, I explore tech trends, contribute to small projects, and enhance my portfolio with
-            creative web solutions.
-          </p>
+        <div class="terminal-hero glass-panel">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">bash — sandeep@mern-stack</span>
+          </div>
+          <div class="terminal-body">
+            <p class="terminal-line"><span class="prompt">visitor@matrix:~$</span> <span id="typed-output" class="typed-output"></span><span class="caret" id="typed-caret" aria-hidden="true"></span></p>
+            <p class="terminal-line dim mono-dim">// Initializing secure handshake… OK</p>
+            <p class="terminal-line dim mono-dim">// Loading MERN modules… OK</p>
+          </div>
+        </div>
+        <p class="hero-tagline">Full-stack engineer · MongoDB · Express · React · Node</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary glow-btn">View deployments</a>
+          <a href="#contact" class="btn btn-ghost">Establish link</a>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="section-head reveal">
+        <span class="section-tag">01 // PROFILE</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass-card reveal">
+          <div class="about-avatar-wrap">
+            <img src="images/sandeep pic.jpg" alt="Sandeep Dhakar" class="about-avatar" width="220" height="220" loading="lazy">
+            <div class="avatar-ring"></div>
+          </div>
+          <div class="about-copy">
+            <p>
+              Hi — I'm <strong>Sandeep Dhakar</strong>, a MERN-focused developer building fast, interactive web systems.
+              I lean on <strong>JavaScript</strong> and <strong>React</strong> on the front, with <strong>Node</strong>,
+              <strong>Express</strong>, and <strong>MongoDB</strong> behind the API layer.
+            </p>
+            <p>
+              CS background from <em>Inderprasth College</em> and <em>Jiwaji University, Gwalior</em>. I like shipping
+              clean UIs, solid data flows, and experiments that push my stack further.
+            </p>
+            <p class="mono-dim">When offline: tech trends, side projects, leveling up the craft.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+      <div class="section-head reveal">
+        <span class="section-tag">02 // STACK</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-html5" aria-hidden="true"></i>
+            <span>HTML</span>
+            <span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="95" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-css3-alt" aria-hidden="true"></i>
+            <span>CSS</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="90" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-js-square" aria-hidden="true"></i>
+            <span>JavaScript</span>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="85" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-react" aria-hidden="true"></i>
+            <span>React</span>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="70" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-node-js" aria-hidden="true"></i>
+            <span>Node.js</span>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="75" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fas fa-server" aria-hidden="true"></i>
+            <span>Express.js</span>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="70" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fas fa-database" aria-hidden="true"></i>
+            <span>MongoDB</span>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="75" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-git-alt" aria-hidden="true"></i>
+            <span>Git &amp; GitHub</span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="80" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="skill reveal" data-skill>
+          <div class="skill-info">
+            <i class="fab fa-python" aria-hidden="true"></i>
+            <span>Python (learning)</span>
+            <span class="skill-pct">60%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-percent="60" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+      <div class="section-head reveal">
+        <span class="section-tag">03 // DEPLOYMENTS</span>
+        <h2>Projects</h2>
+      </div>
       <div class="projects-container">
 
-        <div class="project-card">
-          <h3>Bakery Website</h3>
-          <p>A modern bakery website showcasing products, offers, and online orders.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/Bakery-Website/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="cyan">
+            <div class="thumb-inner">
+              <span class="thumb-code">BAKERY</span>
+              <i class="fas fa-bread-slice" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Bakery Website</h3>
+            <p>Modern bakery site — products, offers, and order flow.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/Bakery-Website/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>QR Code Generator</h3>
-          <p>An interactive app to generate QR codes for any text or URL instantly.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/QR-Code-Generator/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="green">
+            <div class="thumb-inner">
+              <span class="thumb-code">QR_GEN</span>
+              <i class="fas fa-qrcode" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>QR Code Generator</h3>
+            <p>Generate QR codes for text or URLs instantly.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/QR-Code-Generator/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>Analog Clock</h3>
-          <p>A functional analog clock with real-time display using JavaScript.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/Anolog-Clock-/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="purple">
+            <div class="thumb-inner">
+              <span class="thumb-code">CLOCK</span>
+              <i class="fas fa-clock" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Analog Clock</h3>
+            <p>Real-time analog clock with JavaScript.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/Anolog-Clock-/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>Eduinnotech Explore</h3>
-          <p>A school ERP interface demo showcasing courses, dashboards, and navigation.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://eduinnotech.com/templates/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="cyan">
+            <div class="thumb-inner">
+              <span class="thumb-code">EDU</span>
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Eduinnotech Explore</h3>
+            <p>School ERP-style interface demo — courses and navigation.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://eduinnotech.com/templates/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>Dhakad PureVeda</h3>
-          <p>A product website for Dhakad PureVeda, showing product packs, prices, and offers.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/Dhakad-Pureveda/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="green">
+            <div class="thumb-inner">
+              <span class="thumb-code">PURE</span>
+              <i class="fas fa-leaf" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Dhakad PureVeda</h3>
+            <p>Product showcase — packs, pricing, and offers.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/Dhakad-Pureveda/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <!-- E-Commerce API Project -->
-        <div class="project-card">
-          <h3>E-Commerce API</h3>
-          <p>
-            A dynamic e-commerce project using <strong>API integration</strong> to fetch and display products with
-            responsive UI and search functionality.
-          </p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript, API</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/E-Commers-Api/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="purple">
+            <div class="thumb-inner">
+              <span class="thumb-code">API</span>
+              <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>E-Commerce API</h3>
+            <p>Product catalog via API with search and responsive UI.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript, API</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/E-Commers-Api/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>Calculator App</h3>
-          <p>
-            A simple yet powerful <strong>Calculator App</strong> built using
-            <strong>HTML, CSS, and JavaScript</strong>, providing clean UI and smooth arithmetic operations.
-          </p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/Calculator-App/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="cyan">
+            <div class="thumb-inner">
+              <span class="thumb-code">CALC</span>
+              <i class="fas fa-calculator" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Calculator App</h3>
+            <p>Clean calculator UI with smooth operations.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/Calculator-App/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <!-- Mountains With Sandeep Project -->
-        <div class="project-card">
-          <h3>Mountains With Sandeep</h3>
-          <p>
-            A beautiful travel and trekking website showcasing mountain destinations, built with elegant design and
-            interactive features.
-          </p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/MountainsWithSandeep/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="green">
+            <div class="thumb-inner">
+              <span class="thumb-code">MTNS</span>
+              <i class="fas fa-mountain" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Mountains With Sandeep</h3>
+            <p>Travel / trekking site with interactive layout.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/MountainsWithSandeep/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="project-card">
-          <h3>Weather App</h3>
-          <p>
-            A responsive <strong>Weather App</strong> built using
-            <strong>HTML, CSS, and JavaScript</strong>. It fetches real-time weather data using an API
-            and displays temperature, conditions, and location details with a clean UI.
-          </p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript, OpenWeather API</p>
-          <div class="project-links">
-            <a href="https://sandeep-dhakar.github.io/Weather-App/" target="_blank" class="btn">Live Demo</a>
-            <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" class="btn btn-github">GitHub</a>
+        <article class="project-card glass-card reveal tilt-card" data-tilt>
+          <div class="project-thumb" data-accent="purple">
+            <div class="thumb-inner">
+              <span class="thumb-code">WX</span>
+              <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+            </div>
           </div>
-        </div>
+          <div class="project-body">
+            <h3>Weather App</h3>
+            <p>OpenWeather-powered conditions and location details.</p>
+            <p class="project-tech"><strong>Tech:</strong> HTML, CSS, JavaScript, OpenWeather API</p>
+            <div class="project-links">
+              <a href="https://sandeep-dhakar.github.io/Weather-App/" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">Live</a>
+              <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-ghost">GitHub</a>
+            </div>
+          </div>
+        </article>
 
       </div>
     </section>
 
-    <!-- Skills Section -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-container">
-
-    <!-- Frontend -->
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-html5"></i>
-        <span>HTML</span>
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="section-head reveal">
+        <span class="section-tag">04 // UPLINK</span>
+        <h2>Contact</h2>
       </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 95%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-css3-alt"></i>
-        <span>CSS</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 90%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-js-square"></i>
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 85%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-react"></i>
-        <span>React</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 70%;"></div>
-      </div>
-    </div>
-
-    <!-- Backend (MERN) -->
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-node-js"></i>
-        <span>Node.js</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 75%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fas fa-server"></i>
-        <span>Express.js</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 70%;"></div>
-      </div>
-    </div>
-
-    <!-- Database -->
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fas fa-database"></i>
-        <span>MongoDB</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 75%;"></div>
-      </div>
-    </div>
-
-    <!-- Tools -->
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-git-alt"></i>
-        <span>Git & GitHub</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 80%;"></div>
-      </div>
-    </div>
-
-    <!-- Python -->
-    <div class="skill">
-      <div class="skill-info">
-        <i class="fab fa-python"></i>
-        <span>Python (Learning)</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 60%;"></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div class="contact-container">
-
-        <div class="contact-card">
-          <i class="fas fa-envelope"></i>
-          <h3>Email</h3>
-          <p><a href="mailto:sandeepdhakar285@gmail.com">sandeepdhakar285@gmail.com</a></p>
+      <div class="contact-shell glass-card reveal">
+        <form class="terminal-form" id="contact-form" novalidate>
+          <div class="terminal-form-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span>secure_channel.sh</span>
+          </div>
+          <p class="form-line"><span class="prompt">guest@sandeep:~$</span> <span class="cmd">./send_message --interactive</span></p>
+          <label class="field">
+            <span class="field-prompt"><span class="prompt">name</span> <span class="equals">=</span></span>
+            <input type="text" id="msg-name" name="name" placeholder='"Your name"' autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span class="field-prompt"><span class="prompt">email</span> <span class="equals">=</span></span>
+            <input type="email" id="msg-email" name="email" placeholder='"you@domain.com"' autocomplete="email" required>
+          </label>
+          <label class="field field-block">
+            <span class="field-prompt"><span class="prompt">message</span> <span class="equals">&lt;&lt;</span></span>
+            <textarea id="msg-text" name="message" rows="5" placeholder="// Type your payload…" required></textarea>
+          </label>
+          <p class="form-line mono-dim"># Opens your mail client with a pre-filled message.</p>
+          <button type="submit" class="btn btn-primary glow-btn form-submit">transmit</button>
+        </form>
+        <div class="contact-channels">
+          <a href="mailto:sandeepdhakar285@gmail.com" class="channel glass-panel"><i class="fas fa-envelope" aria-hidden="true"></i><span>sandeepdhakar285@gmail.com</span></a>
+          <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" class="channel glass-panel"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+          <a href="https://www.linkedin.com/in/sandeep-dhakar-882904378" target="_blank" rel="noopener noreferrer" class="channel glass-panel"><i class="fab fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
         </div>
-
-        <div class="contact-card">
-          <i class="fab fa-github"></i>
-          <h3>GitHub</h3>
-          <p><a href="https://github.com/SANDEEP-DHAKAR" target="_blank">github.com/SANDEEP-DHAKAR</a></p>
-        </div>
-
-        <div class="contact-card">
-          <i class="fab fa-linkedin"></i>
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/sandeep-dhakar-882904378"
-              target="_blank">linkedin.com/in/sandeep-dhakar-882904378</a></p>
-        </div>
-
       </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <p>&copy; 2025 <span>Sandeep Dhakar</span>. All Rights Reserved.</p>
-
-        <div class="footer-social">
-          <a href="https://github.com/SANDEEP-DHAKAR" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/sandeep-dhakar-882904378" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/dhakar._.sandeep/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://web.telegram.org/k/" target="_blank"><i class="fab fa-telegram"></i></a>
-          <a href="https://facebook.com/yourusername" target="_blank"><i class="fab fa-facebook"></i></a>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; <span id="year"></span> Sandeep Dhakar <span class="mono-dim">//</span> All systems nominal.</p>
+      <div class="footer-social">
+        <a href="https://github.com/SANDEEP-DHAKAR" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://linkedin.com/in/sandeep-dhakar-882904378" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/dhakar._.sandeep/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://web.telegram.org/k/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-  </div>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 
