@@ -118,12 +118,10 @@ a:hover {
   width: min(420px, 90vw);
   height: min(420px, 90vw);
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 245, 255, 0.14) 0%,
-    rgba(178, 75, 243, 0.06) 40%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(0, 245, 255, 0.14) 0%,
+      rgba(178, 75, 243, 0.06) 40%,
+      transparent 70%);
   transform: translate(-50%, -50%);
   z-index: 0;
   mix-blend-mode: screen;
@@ -168,6 +166,7 @@ body.reduce-fx .trail-canvas {
   0% {
     background-position: 0 0, 0 0;
   }
+
   100% {
     background-position: 48px 48px, -48px 48px;
   }
@@ -348,13 +347,11 @@ body.reduce-fx .matrix-canvas {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.12) 2px,
-    rgba(0, 0, 0, 0.12) 4px
-  );
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px);
   opacity: 0.35;
   z-index: 1;
 }
@@ -623,11 +620,13 @@ body.reduce-fx .matrix-canvas {
 }
 
 @keyframes scroll-pulse {
+
   0%,
   100% {
     opacity: 0.4;
     transform: scaleY(0.85);
   }
+
   50% {
     opacity: 1;
     transform: scaleY(1);
@@ -847,14 +846,19 @@ body.reduce-fx .matrix-canvas {
   transform-style: preserve-3d;
   perspective: 1000px;
   will-change: transform;
+  transform: translateZ(0);
   border: 1px solid rgba(0, 245, 255, 0.22);
   box-shadow:
     0 0 0 1px rgba(0, 255, 136, 0.08) inset,
     0 0 36px rgba(0, 245, 255, 0.06);
-  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .project-card:hover {
+  transform: translateY(-10px) scale(1.02);
   border-color: rgba(0, 255, 136, 0.55);
   box-shadow:
     0 0 0 1px rgba(0, 255, 136, 0.22) inset,
@@ -892,8 +896,8 @@ body.reduce-fx .matrix-canvas {
   object-position: top center;
   z-index: 2;
   transition:
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    filter 0.35s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.4s ease,
     opacity 0.3s ease;
 }
 
