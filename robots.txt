@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sandeep-dhakar.github.io/Portfolio/sitemap.xml
