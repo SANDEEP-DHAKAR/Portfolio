@@ -194,6 +194,65 @@
     }
     
     /* Services & Projects Stack */
+
+    /* ===============================
+   Tablet
+================================= */
+
+@media (max-width: 992px) {
+
+    .projects-filters {
+        justify-content: flex-start;
+        gap: 0.8rem;
+        margin-bottom: 3rem;
+        padding-inline: 1rem;
+    }
+
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 1.3rem;
+    }
+
+}
+
+/* ===============================
+   Mobile
+================================= */
+
+@media (max-width: 768px) {
+
+    .projects-filters {
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 0.4rem 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.65rem 1.1rem;
+    }
+
+}
+
+/* ===============================
+   Small Mobile
+================================= */
+
+@media (max-width: 480px) {
+
+    .projects-filters {
+        gap: 0.6rem;
+        padding-inline: 0.8rem;
+    }
+
+    .filter-btn {
+        font-size: 0.8rem;
+        padding: 0.6rem 1rem;
+    }
+
+}
+
     .services-grid {
         grid-template-columns: 1fr;
         gap: 1.8rem;

@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorSpan = document.querySelector(".typing-cursor");
     
     if (typedTextSpan) {
-        const textArray = ["Software Developer", "MERN Stack Developer", "Backend Engineer", "Problem Solver"];
+        const textArray = ["Software Developer", "MERN Developer", "Backend Engineer", "Problem Solver"];
         const typingDelay = 100;
         const erasingDelay = 50;
         const newTextDelay = 2000;
