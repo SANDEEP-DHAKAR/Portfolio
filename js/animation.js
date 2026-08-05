@@ -91,18 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resizeCanvas);
         
         // Track mouse inside hero
-        const heroSection = document.getElementById('home');
-        if (heroSection) {
-            heroSection.addEventListener('mousemove', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
-            });
-            heroSection.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-            });
-        }
         
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
@@ -131,16 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 // Mouse interactive effect (gentle push)
-                if (mouse.x !== null && mouse.y !== null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < mouse.radius) {
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        this.x -= (dx / distance) * force * 3;
-                        this.y -= (dy / distance) * force * 3;
-                    }
-                }
                 
                 this.x += this.directionX;
                 this.y += this.directionY;
